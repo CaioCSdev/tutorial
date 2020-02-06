@@ -10,6 +10,12 @@ export class CatsController {
 
   @Post()
   create(@Body() cat: CreateCatDTO): string {
-    return `Olá ${cat.name}`
+    const response = {
+      cat,
+      message: `Olá ${cat.name}, vc só tem ${cat.age} aninhos que ${cat.breed}
+      mais bonitinho!!!`
+    }
+
+    return JSON.stringify(response);
   }
 }
