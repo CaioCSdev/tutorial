@@ -2,7 +2,8 @@
   "name": "tutorial",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "repository": "github:Eliada/tutorial",
+  "author": "Caio <caio.csalgado@gmail.com>",
   "license": "MIT",
   "scripts": {
     "build": "rimraf dist && tsc -p tsconfig.build.json",
