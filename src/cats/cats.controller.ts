@@ -1,11 +1,15 @@
 import { Controller, Get , Post, Body } from '@nestjs/common';
 import { CreateCatDTO } from './dto';
+import { CatService } from './cats.service'
 
 @Controller('cats/')
 export class CatsController {
+  constructor(private readonly catService: CatService) {}
+
   @Get()
   showAll(): string {
-    return 'there are lots of cats'
+    const message = JSON.stringify(this.catService.findAll());
+    return message;
   }
 
   @Post()
